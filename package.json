@@ -1,7 +1,7 @@
 {
-  "name": "react-fabra-connect",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@fabra/react-fabra-connect",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,15 +9,39 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-script-hook": "^1.7.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^4.9.3",
-    "vite": "^4.1.0"
-  }
+    "vite": "^4.1.0",
+    "vite-plugin-dts": "^2.0.2"
+  },
+  "description": "Helper function to open Fabra Connect",
+  "main": "./dist/fabra-connect.umd.cjs",
+  "module": "./dist/fabra-connect.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/fabra-connect.js",
+      "require": "./dist/fabra-connect.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabra-io/react-fabra-connect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabra-io/react-fabra-connect/issues"
+  },
+  "homepage": "https://github.com/fabra-io/react-fabra-connect#readme"
 }

@@ -2,10 +2,20 @@ import { useCallback } from 'react';
 import useScript from 'react-script-hook';
 
 declare global {
-  interface Window { fabra: any; }
+  interface Window { fabra: FabraConnect; }
 }
 
-export const useFabraConnect = (): { open: (linkToken: string) => void; close: () => void; } => {
+export interface FabraConnect {
+  open: (linkToken: string) => void;
+  close: () => void;
+}
+
+export type UseFabraConnectResponse = {
+  open: (linkToken: string) => void;
+  close: () => void;
+};
+
+export const useFabraConnect = (): UseFabraConnectResponse => {
   useScript({
     src: 'https://connect.fabra.io/initialize.js',
     checkForExisting: true,
