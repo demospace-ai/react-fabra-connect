@@ -1,7 +1,7 @@
 {
   "name": "@fabra/react-fabra-connect",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -24,7 +24,7 @@
   "description": "Helper function to open Fabra Connect",
   "main": "./dist/fabra-connect.umd.cjs",
   "module": "./dist/fabra-connect.js",
-  "types": "dist/index.d.ts",
+  "types": "./dist/useFabraConnect.d.ts",
   "exports": {
     ".": {
       "import": "./dist/fabra-connect.js",

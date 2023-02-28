@@ -23,11 +23,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "paths": {
-    "react-fabra-connect": [
-      "src/index.ts"
-    ]
-  },
   "include": [
     "src",
   ],

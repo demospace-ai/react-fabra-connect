@@ -3,10 +3,10 @@ import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
-  plugins: [react(), dts({})],
+  plugins: [react(), dts()],
   build: {
     lib: {
-      entry: "src/index.ts",
+      entry: "src/useFabraConnect.tsx",
       name: "FabraConnect",
       fileName: "fabra-connect",
       formats: ['es', 'umd'],
