@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={() => open(linkToken)} />
+      <button onClick={() => open()} />
     </div>
   );
 }
