@@ -20,7 +20,7 @@ export interface CustomTheme {
 }
 
 export interface FabraConnect {
-  initialize: ({ customTheme }: FabraConnectOptions) => Promise<void>;
+  initialize: (options?: FabraConnectOptions) => Promise<void>;
   open: (linkToken: string) => void;
   close: () => void;
 }
@@ -31,12 +31,12 @@ export type UseFabraConnectResponse = {
   close: () => void;
 };
 
-export const useFabraConnect = ({ customTheme }: FabraConnectOptions): UseFabraConnectResponse => {
+export const useFabraConnect = (options?: FabraConnectOptions): UseFabraConnectResponse => {
   const initFabra = useCallback(async () => {
-    await window.fabra.initialize({
-      customTheme,
-    });
-  }, [customTheme]);
+    await window.fabra.initialize(
+      options,
+    );
+  }, [options]);
 
   useScript({
     src: 'https://connect.fabra.io/initialize.js',
