@@ -21,13 +21,12 @@ function App() {
   }
 
   const { open } = useFabraConnect({
-    linkToken,
     theme, // Theme is optional, will default to Fabra colors.
   });
 
   return (
     <div className="App">
-      <button onClick={() => open()} />
+      <button onClick={() => open(linkToken)} />
     </div>
   );
 }

@@ -23,11 +23,11 @@ export interface FabraConnect {
 
 
 export type UseFabraConnectResponse = {
-  open: (linkToken: string, customTheme?: CustomTheme) => void;
+  open: (linkToken: string) => void;
   close: () => void;
 };
 
-export const useFabraConnect = ({ linkToken, customTheme } :{ linkToken: string, customTheme?: CustomTheme}): UseFabraConnectResponse => {
+export const useFabraConnect = ({  customTheme } :{  customTheme?: CustomTheme}): UseFabraConnectResponse => {
   const [isFabraReady, setIsFabraReady] = useState<boolean>(false)
 
   const initFabra = useCallback(async () => {
@@ -36,7 +36,7 @@ export const useFabraConnect = ({ linkToken, customTheme } :{ linkToken: string,
     });
     
     setIsFabraReady(true);
-  }, [linkToken, customTheme])
+  }, [customTheme])
 
 
   useScript({
