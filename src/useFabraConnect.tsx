@@ -16,8 +16,8 @@ export interface CustomTheme {
 }
 
 export interface FabraConnect {
-  initialize: ({ linkToken, customTheme} : { linkToken: string, customTheme?: CustomTheme }) => Promise<void>;
-  open: () => void;
+  initialize: ({  customTheme} : {  customTheme?: CustomTheme }) => Promise<void>;
+  open: (linkToken: string) => void;
   close: () => void;
 }
 
@@ -32,7 +32,6 @@ export const useFabraConnect = ({ linkToken, customTheme } :{ linkToken: string,
 
   const initFabra = useCallback(async () => {
     await window.fabra.initialize({
-      linkToken,
       customTheme,
     });
     
@@ -50,7 +49,7 @@ export const useFabraConnect = ({ linkToken, customTheme } :{ linkToken: string,
 
   const open = useCallback((linkToken: string) => {
     if (window.fabra) {
-      window.fabra.open();
+      window.fabra.open(linkToken);
     }
   }, []);
 
