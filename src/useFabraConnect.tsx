@@ -25,7 +25,6 @@ export interface FabraConnect {
   close: () => void;
 }
 
-
 export type UseFabraConnectResponse = {
   open: (linkToken: string) => void;
   close: () => void;
