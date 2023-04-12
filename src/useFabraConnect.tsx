@@ -7,6 +7,7 @@ declare global {
 
 export interface FabraConnectOptions {
   customTheme?: CustomTheme;
+  containerID?: string;
 }
 
 export interface CustomTheme {
