@@ -52,9 +52,11 @@ export const useFabraConnect = (options?: FabraConnectOptions): UseFabraConnectR
     }
   }, []);
 
-  const close = () => {
-    window.fabra.close();
-  };
+  const close = useCallback(() => {
+    if (window.fabra) {
+      window.fabra.close();
+    }
+  }, []);
 
   return {
     open,
