@@ -24,11 +24,15 @@ export interface FabraConnect {
   initialize: (options?: FabraConnectOptions) => Promise<void>;
   open: (linkToken: string) => void;
   close: () => void;
+  reattach: (containerID: string) => void;
+  destroy: () => void;
 }
 
 export type UseFabraConnectResponse = {
   open: (linkToken: string) => void;
   close: () => void;
+  reattach: (containerID: string) => void;
+  destroy: () => void;
 };
 
 export const useFabraConnect = (options?: FabraConnectOptions): UseFabraConnectResponse => {
@@ -58,8 +62,22 @@ export const useFabraConnect = (options?: FabraConnectOptions): UseFabraConnectR
     }
   }, []);
 
+  const reattach = useCallback((containerID: string) => {
+    if (window.fabra) {
+      window.fabra.reattach(containerID);
+    }
+  }, []);
+
+  const destroy = useCallback(() => {
+    if (window.fabra) {
+      window.fabra.destroy();
+    }
+  }, []);
+
   return {
     open,
     close,
+    reattach,
+    destroy,
   };
 };
