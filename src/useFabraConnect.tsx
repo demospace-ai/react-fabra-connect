@@ -8,6 +8,8 @@ declare global {
 export interface FabraConnectOptions {
   customTheme?: CustomTheme;
   containerID?: string;
+  supportEmail?: string;
+  docsLink?: string;
 }
 
 export interface CustomTheme {
