@@ -4,18 +4,18 @@
 `npm i @fabra/react-fabra-connect`
 
 ## Usage
-```
+```tsx
 import { useFabraConnect } from '@fabra/react-fabra-connect';
 
 function App() {
-  const linkToken = <Fetch the link token from your own backend>;
+  const linkToken = '<Fetch the link token from your own backend>';
 
   const theme = {
     colors: {
       primary: {
-        base: #805AD5, // Default color for buttons, graphics, etc
-        hover: #553C9A, // Hover color for buttons and links
-        text: #FFFFFF, // The font color on top of the primary color
+        base: '#805AD5', // Default color for buttons, graphics, etc
+        hover: '#553C9'", // Hover color for buttons and links
+        text: '#FFFFFF', // The font color on top of the primary color
       }
     }
   }
@@ -25,7 +25,7 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className='App'>
       <button onClick={() => open(linkToken)} />
     </div>
   );
